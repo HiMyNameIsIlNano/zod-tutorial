@@ -3,9 +3,11 @@
 import { expect, it } from "vitest";
 import { z } from "zod";
 
+const PrivacyLevelEnum = z.enum(["public", "private"]);
+
 const Form = z.object({
   repoName: z.string(),
-  privacyLevel: z.string(),
+  privacyLevel: PrivacyLevelEnum,
   //              ^ 🕵️‍♂️
 });
 
